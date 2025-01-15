@@ -1,4 +1,4 @@
-FROM docker:stable
+FROM public.ecr.aws/docker/library/alpine:3.18
 
 RUN set -eux ; \
     apk add  --no-cache bash
