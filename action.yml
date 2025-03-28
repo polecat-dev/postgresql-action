@@ -43,6 +43,10 @@ inputs:
     required: false
     description: 'EXPOSED_POSTGRES_PORT - exposed postgres port'
     default: '5432'
+  ecr_repo:
+    required: false
+  ecr_password:
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
