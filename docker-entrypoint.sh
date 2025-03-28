@@ -3,6 +3,7 @@
 set -eo pipefail
 
 cd /docker
+echo ${ECR_PASSWORD} | docker login --username AWS --password-stdin ${ECR_REPO}
 IMAGE_ID=$(docker build --quiet --build-arg INPUT_POSTGRES_IMAGE_TAG="$INPUT_POSTGRES_IMAGE_TAG" --build-arg INPUT_POSTGRES_IMAGE_NAME="$INPUT_POSTGRES_IMAGE_NAME" .)
 
 SERVICE_ID=$(docker run \
